@@ -14,6 +14,11 @@ resource "aws_iam_user_group_membership" "iac" {
   groups = [aws_iam_group.iac.name]
 }
 
+resource "aws_iam_access_key" "iac" {
+  count = length(var.iam_users)
+  user  = aws_iam_user.iac[count.index].name
+}
+
 resource "aws_iam_group_policy_attachment" "iac" {
   count      = length(var.iam_policies)
   group      = resource.aws_iam_group.iac.name
