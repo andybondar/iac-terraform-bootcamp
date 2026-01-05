@@ -1,0 +1,4 @@
+iam_policies = [
+  "AmazonEC2FullAccess",
+  "AmazonVPCFullAccess"
+]
