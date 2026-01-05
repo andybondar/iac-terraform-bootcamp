@@ -4,6 +4,12 @@ variable "iam_group_name" {
   default     = "IaC"
 }
 
+variable "iam_users" {
+  type        = any
+  description = "List of IAM users"
+  default     = []
+}
+
 variable "iam_policies" {
   type        = any
   description = "List of IAM policies"

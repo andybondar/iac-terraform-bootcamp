@@ -2,6 +2,11 @@ resource "aws_iam_group" "iac" {
   name = var.iam_group_name
 }
 
+resource "aws_iam_user" "iac" {
+  count = length(var.iam_users)
+  name  = var.iam_users[count.index]
+}
+
 resource "aws_iam_group_policy_attachment" "iac" {
   count      = length(var.iam_policies)
   group      = resource.aws_iam_group.iac.name
