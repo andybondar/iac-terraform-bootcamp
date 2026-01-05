@@ -1,5 +1,5 @@
 variable "tags" {
-  type = any
+  type        = any
   description = "Tags"
   default = {
     Project = "IaC_Bootcamp"
@@ -7,13 +7,13 @@ variable "tags" {
 }
 
 variable "tfstate_bucket" {
-  type = string
+  type        = string
   description = "Terraform State bucket name"
-  default = "iac-bootcamp-2026-tfstate-bucket"
+  default     = "iac-bootcamp-2026-tfstate-bucket"
 }
 
 variable "region" {
-  type = string
+  type        = string
   description = "Default region"
-  default = "eu-central-1"
+  default     = "eu-central-1"
 }
