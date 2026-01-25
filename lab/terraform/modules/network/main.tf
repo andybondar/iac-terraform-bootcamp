@@ -10,3 +10,12 @@ resource "aws_eip" "main" {
   region = var.region
   tags   = local.eip_tags
 }
+
+resource "aws_subnet" "main" {
+  vpc_id            = aws_vpc.main.id
+  region            = var.region
+  cidr_block        = var.subnet["cidr"]
+  availability_zone = var.subnet["az"]
+
+  tags = local.subnet_tags
+}

@@ -12,4 +12,11 @@ locals {
       Name = "iac_bootcamp_eip"
     }
   )
+
+  subnet_tags = merge(
+    var.tags,
+    {
+      Name = var.subnet["name"]
+    }
+  )
 }
