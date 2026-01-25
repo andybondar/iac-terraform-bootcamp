@@ -26,4 +26,11 @@ locals {
       Name = "iac_bootcamp_igw"
     }
   )
+
+  rtable_tags = merge(
+    var.tags,
+    {
+      Name = "iac_bootcamp_rtable"
+    }
+  )
 }
