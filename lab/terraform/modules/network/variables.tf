@@ -19,3 +19,49 @@ variable "eip_enable" {
   description = "Enable/Disable EIP, True/False"
   default     = false
 }
+
+variable "allow_all_traffic" {
+  type        = any
+  description = "Allow ALL IPv4 outbound tarffic"
+  default = {
+    enable      = false
+    cidr_ipv4   = "0.0.0.0/0"
+    ip_protocol = "-1"
+  }
+}
+
+variable "allow_https" {
+  type        = any
+  description = "Allow HTTPS inbound tarffic"
+  default = {
+    enable      = true
+    cidr_ipv4   = "0.0.0.0/0"
+    ip_protocol = "tcp"
+    from_port   = 443
+    to_port     = 443
+  }
+}
+
+variable "allow_ssh" {
+  type        = any
+  description = "Allow SSH inbound tarffic"
+  default = {
+    enable      = false
+    cidr_ipv4   = "0.0.0.0/0"
+    ip_protocol = "tcp"
+    from_port   = 22
+    to_port     = 22
+  }
+}
+
+variable "allow_http" {
+  type        = any
+  description = "Allow HTTP inbound tarffic"
+  default = {
+    enable      = false
+    cidr_ipv4   = "0.0.0.0/0"
+    ip_protocol = "tcp"
+    from_port   = 80
+    to_port     = 80
+  }
+}
