@@ -19,4 +19,11 @@ locals {
       Name = var.subnet["name"]
     }
   )
+
+  igw_tags = merge(
+    var.tags,
+    {
+      Name = "iac_bootcamp_igw"
+    }
+  )
 }

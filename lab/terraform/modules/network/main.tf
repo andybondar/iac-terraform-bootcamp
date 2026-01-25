@@ -19,3 +19,10 @@ resource "aws_subnet" "main" {
 
   tags = local.subnet_tags
 }
+
+resource "aws_internet_gateway" "main" {
+  vpc_id = aws_vpc.main.id
+  region = var.region
+
+  tags = local.igw_tags
+}
