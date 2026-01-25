@@ -1,0 +1,43 @@
+locals {
+  vpc_tags = merge(
+    var.tags,
+    {
+      Name = "iac_bootcamp_vpc"
+    }
+  )
+
+  eip_tags = merge(
+    var.tags,
+    {
+      Name = "iac_bootcamp_eip"
+    }
+  )
+
+  subnet_tags = merge(
+    var.tags,
+    {
+      Name = var.subnet["name"]
+    }
+  )
+
+  igw_tags = merge(
+    var.tags,
+    {
+      Name = "iac_bootcamp_igw"
+    }
+  )
+
+  rtable_tags = merge(
+    var.tags,
+    {
+      Name = "iac_bootcamp_rtable"
+    }
+  )
+
+  sg_tags = merge(
+    var.tags,
+    {
+      Name = "iac_bootcamp_sg"
+    }
+  )
+}

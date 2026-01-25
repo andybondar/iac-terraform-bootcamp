@@ -1,0 +1,23 @@
+eip_enable = true
+
+allow_all_traffic = {
+  enable = true
+  cidr_ipv4 = "0.0.0.0/0"
+  ip_protocol = "-1"
+}
+
+allow_ssh = {
+  enable = true
+  cidr_ipv4 = "your_ip_address"
+  ip_protocol = "tcp"
+  from_port = 22
+  to_port = 22
+}
+
+allow_http = {
+  enable = true
+  cidr_ipv4 = "your_ip_address"
+  ip_protocol = "tcp"
+  from_port = 80
+  to_port = 80
+}
