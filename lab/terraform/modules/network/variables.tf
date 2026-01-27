@@ -14,12 +14,6 @@ variable "subnet" {
   }
 }
 
-variable "eip_enable" {
-  type        = bool
-  description = "Enable/Disable EIP, True/False"
-  default     = false
-}
-
 variable "allow_all_traffic" {
   type        = any
   description = "Allow ALL IPv4 outbound tarffic"

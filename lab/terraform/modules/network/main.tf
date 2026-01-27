@@ -5,12 +5,6 @@ resource "aws_vpc" "main" {
   tags = local.vpc_tags
 }
 
-resource "aws_eip" "main" {
-  count  = var.eip_enable ? 1 : 0
-  region = var.region
-  tags   = local.eip_tags
-}
-
 resource "aws_subnet" "main" {
   vpc_id            = aws_vpc.main.id
   region            = var.region
